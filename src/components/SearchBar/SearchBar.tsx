@@ -1,4 +1,3 @@
-import type { FormEvent } from "react";
 import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css";
 
@@ -33,10 +32,6 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
         <form
           className={styles.form}
           action={handleSubmit}
-          onSubmit={(event: FormEvent<HTMLFormElement>) => {
-            event.preventDefault();
-            void handleSubmit(new FormData(event.currentTarget));
-          }}
         >
           <input
             className={styles.input}
